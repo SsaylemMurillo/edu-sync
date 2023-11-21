@@ -22,7 +22,7 @@ export default function RootLayout({
         <div className='flex flex-col flex-auto w-full h-screen'> 
           <div className="h-full">
             <div className="grid lg:grid-cols-3 h-full">
-              <div className="bg-yellow-500 items-center lg:flex inline-grid shadow-2xl rounded-xl justify-center hidden ">
+              <div className="bg-yellow-500 items-center lg:flex inline-grid shadow-2xl rounded-xl justify-center hidden">
                 <div className="bg-white rounded-full p-10 bg-center shadow-lg shadow-yellow-800/50 ">
                   <Logo />
                 </div>
