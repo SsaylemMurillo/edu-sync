@@ -4,9 +4,7 @@ import React from 'react';
 
 const DashboardPage = () => {
   return (
-    <LayoutHome>
-      <div className='justify-start'>Home of - Edusync</div>
-    </LayoutHome>
+      <div className='ml-10 mt-3'>Home of - Edusync</div>
   );
 };
 

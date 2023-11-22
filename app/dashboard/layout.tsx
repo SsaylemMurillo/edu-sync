@@ -18,11 +18,11 @@ const LayoutHome = ({
   return (
     <html lang="en">
       <body>
-        
-        <SidebarProfesor/>
-        <div className=''>
-          
-          {children}
+        <div className='flex h-full'>
+          <ClientOnly>
+            <SidebarProfesor />
+            {children}
+          </ClientOnly>
         </div>
       </body>
     </html>
