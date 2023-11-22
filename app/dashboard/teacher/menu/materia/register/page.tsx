@@ -11,12 +11,11 @@ function RegistrarMateria() {
                         <div className="w-full xl:w-3/4 lg:w-max flex border-2 rounded-lg border-primary">
 
                             <div className="w-16 h-30 bg-yellow-500 lg:w-5/12 items-center lg:flex inline-grid shadow-2xl rounded-xl justify-center hidden">
-                                <div className='inline-flex mb-6'>
-                                    <div className={`bg-white rounded-full p-3 bg-center shadow-lg w-10 cursor-pointer 
-                        block float-left ${!open && "p-3 object-cover"}`} src={Logo} alt="Logo" style={{ width: '90px', height: '90px' }}>
-                                        <Logo />
+                                <div className="w-16 h-30 bg-yellow-500 lg:w-5/12 items-center lg:flex inline-grid shadow-2xl rounded-xl justify-center hidden">
+                                    <div className="bg-white rounded-full p-4 bg-center shadow-lg shadow-yellow-800/50 ">
+                                         <Logo />
                                     </div>
-                                    <h1 className={`text-white origin-left font-medium uppercase text-2xl mt-6 ml-3 ${!open && "scale-0"}`}>EduSync</h1>
+
                                 </div>
                                 <div className="w-full lg:w-7/12 bg-white p-5 rounded-lg lg:rounded-l-none border-primary">
                                     <h3 className="pt-4 text-4xl text-center text-ternary font-bold">Registrar Materia</h3>

@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { collection, getDocs } from "firebase/firestore";
 import CardMateria from "@/app/components/card/cardMateria";
 
-const pageMateria = () => {
-  const [cards, setCards] = useState([]);
+const PageMateria = () => {
+  const [cardMateria, setCardMateria] = useState([]);
 
   const handleCreateCard = () => {
     // Siempre colocar la nueva tarjeta a la derecha
     const position = 'right';
 
     // Agregar la nueva card con una clave única
-    setCards((prevCards) => [
-      ...prevCards,
-      { position, key: Math.random().toString(20).substring(7) } // Usar una clave única
-    ]);
+    // setCardMateria((prevCards) => [
+    //   ...prevCards,
+    //   { position, key: Math.random().toString(20).substring(7) } // Usar una clave única
+    // ]);
   };
 
   return (
@@ -29,10 +29,7 @@ const pageMateria = () => {
                   <div className="grid grid-cols31 md:grid-cols-3 lg:grid-cols-3">
                     <div className="lg:col-span-2">
                         <div className="grid gap-1 text-base grid-cols-1 ">
-                          {cards.map((card) => (
-                            
-                        <CardMateria key={card.key} position={card.position} />
-                          ))}
+                          
                         </div>
                     </div>
                   </div>
@@ -52,4 +49,4 @@ const pageMateria = () => {
   );
 };
 
-export default pageMateria;
+export default PageMateria;
