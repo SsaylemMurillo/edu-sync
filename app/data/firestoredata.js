@@ -1,11 +1,10 @@
 import { db } from "../config/firebaseconfig";
-import { doc, getDoc, addDoc, query, collection, where } from "firebase/firestore";
-
+import { collection, doc, query, where, getDocs, getDoc, addDoc } from 'firebase/firestore';
 
 // Creation of user in firestore
 export async function saveUser(userId) {
     try {
-        if (!searchUser){
+        if (!searchUser(userId)){
             const docRef = await addDoc(collection(db, "users"), {
                 user_id: userId,
             });
@@ -23,24 +22,41 @@ async function searchUser(userId) {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        return false;
+        return true;
     }
     return false;
 }
 
-// User with role/permissions
-
-/*
-async function getUserRole(userId){
-    const roleRef = collection(db, "roles");
-
-    // Create a query against the collection.
-    const q = query(citiesRef, where("id_rol", "==", {userId}));
-
-    const querySnapshot = await getDocs(q);
-
-    querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-    });
+// Save Subject
+export async function saveSubject(subject) {
+    try {
+        if (searchSubject(subject.id)){
+            const docRef = await addDoc(collection(db, "subjects"), {
+                id: subject.id,
+                name: subject.name,
+                teacher_cc: subject.teacherCC,
+                teacher_fn: subject.teacherFN,
+                teacher_ln: subject.teacherLN,
+                group: subject.group,
+                initial_h: subject.initialH,
+                final_h: subject.finalH,
+            });
+            console.log("Document written with ID: ", docRef.id);
+            alert("Asignatura creada correctamente")
+        }else{
+            console.log("Document already existent")
+            alert("Asignatura ya existe")
+        }
+    } catch (e) {
+        console.error("Error adding document: ", e);
+        alert("Error al crear la asignatura: " + e)
+    }
 }
-*/
+
+// Verification of user in firestore
+async function searchSubject(subject_id) {
+    const queryDataBase = query(collection(db, "subjects"), where("id", "==", subject_id));
+    const querySnapshot = await getDocs(queryDataBase);
+
+    return (querySnapshot.docs.length == 0);
+}
