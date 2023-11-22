@@ -18,7 +18,7 @@ const LayoutHome = ({
   return (
     <html lang="en">
       <body>
-        <div className='flex h-full'>
+        <div className='flex h-full w-full'>
           <ClientOnly>
             <SidebarProfesor />
             {children}
