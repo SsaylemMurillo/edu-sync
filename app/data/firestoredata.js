@@ -1,6 +1,5 @@
 import { db } from "../config/firebaseconfig";
-import { collection, addDoc } from "firebase/firestore";
-import { doc, getDoc, query, collection, where } from "firebase/firestore";
+import { doc, getDoc, addDoc, query, collection, where } from "firebase/firestore";
 
 
 // Creation of user in firestore
