@@ -1,7 +1,7 @@
 // layout.tsx
 import type { Metadata } from 'next'
 import React from 'react';
-import SidebarProfesor from "./sidebar";
+import SidebarProfesor from "../components/sidebar";
 import ClientOnly from '../components/ClientOnly';
 export const metadata: Metadata = {
   title: 'EduSync',

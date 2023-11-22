@@ -7,7 +7,7 @@ import { BiBookBookmark, BiHome, BiLogOut, BiUser } from "react-icons/bi";
 import { PiStudentDuotone } from "react-icons/pi";
 import { BsPersonCheck } from "react-icons/bs";
 import { FiClipboard } from "react-icons/fi";
-import Logo from '../components/Logo';
+import Logo from './Logo';
 
 function  SidebarProfesor (){
     const [open, setOpen] = useState(false);
@@ -26,18 +26,20 @@ function  SidebarProfesor (){
                         block float-left ${!open && "p-3 object-cover"}`} src={Logo} alt="Logo" style={{ width: '90px', height: '90px' }}>
                             <Logo/>
                         </div>
-                        <h1 className={`text-white origin-left font-medium uppercase text-2xl mt-6 ml-3 ${!open && "scale-0"}`}>EduSync </h1>
+                        <h1 className={`text-white origin-left font-medium uppercase text-2xl mt-6 ml-3 ${!open && "scale-0"}`}>EduSync</h1>
                     </div>
 
                     <div className={`flex items-center rounded-md bg-ternary/50 py-2 px-4 ${!open ? "px-3" : "px-4"}`}>
-                        <BsSearch className={`text-white text-xl block float-left cursor-pointer mr-1 duration-300 ${!open && "ml-4 duration-300 "}`} />
-                        <input type='text' placeholder='Buscar' className={`text-xl font-semibold bg-transparent w-full text-white focus:outline-none
+                        <BsSearch className={`text-white text-xl block float-left cursor-pointer mr-3 duration-300 ${!open && "ml-5 duration-300 "}`} />
+                        <input type='text' placeholder='Buscar...' className={`text-l bg-transparent w-full focus:outline-none 
+                        focus:font-semibold
+                        text-white placeholder-gray-100
                      ${!open && "hidden"}`} />
                     </div>
 
                     <ul className='pt-1 '>
                         <li className={`text-white text-sm flex items-center gap-x-4 p-2 hover:bg-ternary/50 rounded-md mt-1`}>
-                            <span className={`text-2xl block float-left duration-300 ${!open && "pl-4 duration-300"}`}> <BiHome /> </span>
+                            <span className={`text-2xl block float-left duration-300 ${!open && "ml-5 duration-300"}`}> <BiHome /> </span>
                             <span className={`text-base font-semibold flex-1 ${!open && "hidden"}`}
                                 
                             >Home</span>

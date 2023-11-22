@@ -1,7 +1,9 @@
 import { db } from "../config/firebaseconfig";
 import { collection, addDoc } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, query, collection, where } from "firebase/firestore";
 
+
+// Creation of user in firestore
 export async function saveUser(userId) {
     try {
         if (!searchUser){
@@ -16,6 +18,7 @@ export async function saveUser(userId) {
     }
 }
 
+// Verification of user in firestore
 async function searchUser(userId) {
     const docRef = doc(db, "user_id", userId);
     const docSnap = await getDoc(docRef);
@@ -24,4 +27,19 @@ async function searchUser(userId) {
         return false;
     }
     return false;
+}
+
+// User with role/permissions
+
+async function getUserRole(userId){
+    const roleRef = collection(db, "roles");
+
+    // Create a query against the collection.
+    const q = query(citiesRef, where("id_rol", "==", {userId}));
+
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+    });
 }
