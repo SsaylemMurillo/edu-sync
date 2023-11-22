@@ -1,6 +1,14 @@
-'use client';
+// dashboard/[...id].tsx
 
-export default function DashboardPage({ params }){
-    console.log(params);
-    return <div>Home of {params.id} - Edusync</div>
-}
+import React from 'react';
+import LayoutHome from '../layout';  // Ajusta la ruta según la ubicación real del archivo layout.tsx
+
+const DashboardPage = () => {
+  return (
+    <LayoutHome>
+      <div className='justify-start'>Home of - Edusync</div>
+    </LayoutHome>
+  );
+};
+
+export default DashboardPage;

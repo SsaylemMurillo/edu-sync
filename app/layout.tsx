@@ -24,7 +24,7 @@ export default function RootLayout({
             <div className="grid lg:grid-cols-3 h-full">
               <div className="bg-yellow-500 items-center lg:flex inline-grid shadow-2xl rounded-xl justify-center hidden">
                 <div className="bg-white rounded-full p-10 bg-center shadow-lg shadow-yellow-800/50 ">
-                  <Logo />
+                  <Logo/>
                 </div>
               </div>
               <div className="col-span-2 flex justify-center items-center">
