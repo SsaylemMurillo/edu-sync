@@ -16,7 +16,7 @@ function  SidebarProfesor (){
     return (
         <div className='flex h-full'>
             <div className=''>
-                <div className={`bg-yellow-400 h-full p-2 text-secundary pt-5 shadow-lg shadow-yellow-800 relative duration-300
+                <div className={`bg-yellow-400 h-full p-2 text-secondary pt-5 shadow-lg shadow-yellow-800 relative duration-300
                  ${open ? "w-72" : "w-28"}`}>
                     <BsArrowLeftCircle className={`bg-white text-ternary text-4xl cursor-pointer rounded-full absolute -right-5 top-3
                     ${!open && "rotate-180"}`}
