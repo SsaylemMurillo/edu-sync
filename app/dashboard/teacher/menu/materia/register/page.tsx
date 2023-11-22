@@ -4,21 +4,18 @@ import React, { useState } from 'react'
 function RegistrarMateria() {
 
     // Hacer la función para obtener los datos del formulario
-    
     // Llamar a la función para agregar la materia en base de datos: Firebase
-
     // Terminar esta mondá
-
-
+    
     return (
-        <div className="flex flex-col w-full p-5 items-center h-auto">
+        <div className="w-full flex flex-col p-5 justify-center items-center">
             <h3 className="pt-4 text-4xl text-center text-ternary font-bold">Registrar Materia</h3>
-            <div className="mt-4 flex flex-col items-center lg:w-1/4 md:w-3/6 sm:w-full"></div>
+            <div className="mt-4 lg:w-90"></div>
                 <label className="text-sm pb-2 font-bold text-gray-700">
                     Codigo de la Materia
                 </label>
                 <input
-                    className="w-full px-3 py-2 text-sm border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="codigoMateria"
                     type="text"
                     placeholder="Codigo Materia"
@@ -28,7 +25,7 @@ function RegistrarMateria() {
                     Nombre Materia
                 </label>
                 <input
-                    className="w-full px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="nombreMateria"
                     type="text"
                     placeholder="Nombre Materia"
@@ -38,7 +35,7 @@ function RegistrarMateria() {
                     Cedula del Docente
                 </label>
                 <input
-                    className="w-full px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="ccDocente"
                     type="text"
                     placeholder="Cedula Docente"
@@ -48,7 +45,7 @@ function RegistrarMateria() {
                     Primer Nombre
                 </label>
                 <input
-                    className="w-full px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="primerNombre"
                     type="text"
                     placeholder="Primer Nombre"
@@ -58,7 +55,7 @@ function RegistrarMateria() {
                     Primer Apellido
                 </label>
                 <input
-                    className="w-full px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     type="text"
                     placeholder="Primer Apellido"
                 />
@@ -67,7 +64,7 @@ function RegistrarMateria() {
                     Grupo
                 </label>
                 <select
-                    className="w-full px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="grupo"
                 >
                     <option value="" disabled>
@@ -81,7 +78,7 @@ function RegistrarMateria() {
                     Horario Inicio
                 </label>
                 <input
-                    className="w-full px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="h_inicial"
                     type="time"
                     placeholder="0"
@@ -91,18 +88,17 @@ function RegistrarMateria() {
                     Horario Final
                 </label>
                 <input
-                    className="w-full px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 px-3 py-2 text-sm leading-tight border-ternary text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="h_final"
                     type="time"
                     placeholder="0"
                 />
 
                 <button
-                    className="w-full m-5 px-4 py-2 font-bold text-white bg-primary rounded hover:bg-ternary focus:outline-none focus:shadow-outline">
+                    className="w-full md:w-1/2 lg:w-3/6 xl:w-1/4 m-5 px-4 py-2 font-bold text-white bg-primary rounded hover:bg-ternary focus:outline-none focus:shadow-outline">
                     Registrar Materia
                 </button>
             </div>
-        </div>
     )
 }
 
