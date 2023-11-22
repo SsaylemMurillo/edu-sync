@@ -9,8 +9,12 @@ import { saveUser } from "../../edu-sync/app/data/firestoredata"
 import { useRouter } from "next/navigation";
 import React from "react";
 import Logo from "./components/Logo";
+import LoadingIcon from "./components/Loading";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
   const [loggedUser, setLoggedUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +25,14 @@ export default function Home() {
     router.push(`/dashboard/${loggedUser}`);
   }
 
+  
+
   const LogIn = async () => {
+    if ((email == '' && password == '') || email == '' || password == ''){
+      alert('Usuario por favor completa los campos');
+      return;
+    }
+    setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -31,7 +42,12 @@ export default function Home() {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
+        if (errorMessage == 'Firebase: Error (auth/invalid-email).'){
+          alert("Inicio de Sesion - USUARIO INVALIDO");
+        }else{
+          alert("Inicio de Sesion - ERROR: " + errorMessage);
+        }
+        setIsLoading(false);
       });
   }
 
@@ -69,10 +85,19 @@ export default function Home() {
                   </div>
 
                   <div className="mt-5 flex flex-col gap-y-5">
-                    <button type='submit'
-                      onClick={LogIn}
-                      className="hover:bg-yellow-600 transition-all py-3 rounded-md bg-yellow-500 text-white text-l font-semibold">
-                      Iniciar Sesion</button>
+                    {
+                        isLoading ?
+                        <button
+                            className="hover:bg-yellow-600 transition-all py-3 rounded-md bg-yellow-500 text-white text-l font-semibold">
+                        <FontAwesomeIcon icon={faSpinner} spin />
+                        </button>
+                            :
+                          <button type='submit'
+                            onClick={LogIn}
+                            className="hover:bg-yellow-600 transition-all py-3 rounded-md bg-yellow-500 text-white text-l font-semibold">
+                              Iniciar Sesión
+                          </button>
+                      }
                   </div>
                 </div>
               </div>
