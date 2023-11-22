@@ -30,6 +30,7 @@ async function searchUser(userId) {
 
 // User with role/permissions
 
+/*
 async function getUserRole(userId){
     const roleRef = collection(db, "roles");
 
@@ -42,3 +43,4 @@ async function getUserRole(userId){
         console.log(doc.id, " => ", doc.data());
     });
 }
+*/
