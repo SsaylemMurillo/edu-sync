@@ -8,11 +8,15 @@ import { PiStudentDuotone } from "react-icons/pi";
 import { BsPersonCheck } from "react-icons/bs";
 import { FiClipboard } from "react-icons/fi";
 import Logo from './Logo';
+import { useRouter } from "next/navigation";
 
 function  SidebarProfesor (){
     const [open, setOpen] = useState(false);
     const [subMenuOpen, setSubMenuOpen] = useState(false);
-
+     const router = useRouter();
+    const PageMateria = async () => {
+        router.push(`/dashboard/teacher/menu/materia/register`);
+    }
     return (
         <div className='flex h-full'>
             <div className=''>
@@ -64,7 +68,8 @@ function  SidebarProfesor (){
                                 rounded-md mt-1`}>
                                         <span className={`text-xl ml-4 block float-left duration-300 ${!open && "pl-4 duration-300"}`}> <BiBookBookmark /> </span>
                                         <span className={`text-ls font-semibold flex-1 ${!open && "hidden"} `}
-                                           >Materias</span>
+                                           onClick={PageMateria}
+                                        >Materias</span>
 
                                     </li>
                                     <li className={`text-white text-sm flex items-center gap-x-4 p-2 hover:bg-ternary/50 
