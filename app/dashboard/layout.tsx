@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 
-const LayoutHome =({
+const LayoutHome = ({
   children,
 }: {
   children: React.ReactNode;
@@ -17,14 +17,12 @@ const LayoutHome =({
   return (
     <html lang="en">
       <body>
-        
-        <SidebarProfesor/>
-        <div className=''>
+        <div className='flex'>
           
+          <SidebarProfesor />
           {children}
-          
         </div>
-        
+
       </body>
     </html>
   );
