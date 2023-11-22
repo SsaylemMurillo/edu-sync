@@ -1,11 +1,12 @@
-
+'use client';
 
 import React from 'react';
 
 const DashboardPage = () => {
   return (
-
-    <div className='justify-start'>Home of - Edusync</div>
+    <LayoutHome>
+      <div className='justify-start'>Home of - Edusync</div>
+    </LayoutHome>
   );
 };
 

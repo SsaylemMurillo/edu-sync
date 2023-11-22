@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import React from 'react';
 import SidebarProfesor from "./sidebar";
+import ClientOnly from '../components/ClientOnly';
 export const metadata: Metadata = {
   title: 'EduSync',
   description: 'EduSync App',
@@ -17,12 +18,12 @@ const LayoutHome = ({
   return (
     <html lang="en">
       <body>
-        <div className='flex'>
+        
+        <SidebarProfesor/>
+        <div className=''>
           
-          <SidebarProfesor />
           {children}
         </div>
-
       </body>
     </html>
   );
