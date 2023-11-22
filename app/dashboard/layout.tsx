@@ -2,13 +2,14 @@
 import type { Metadata } from 'next'
 import React from 'react';
 import SidebarProfesor from "./sidebar";
+import ClientOnly from '../components/ClientOnly';
 export const metadata: Metadata = {
   title: 'EduSync',
   description: 'EduSync App',
 };
 
 
-const LayoutHome =({
+const LayoutHome = ({
   children,
 }: {
   children: React.ReactNode;
@@ -17,14 +18,12 @@ const LayoutHome =({
   return (
     <html lang="en">
       <body>
-        
-        <SidebarProfesor/>
-        <div className=''>
-          
-          {children}
-          
+        <div className='flex h-full'>
+          <ClientOnly>
+            <SidebarProfesor />
+            {children}
+          </ClientOnly>
         </div>
-        
       </body>
     </html>
   );
