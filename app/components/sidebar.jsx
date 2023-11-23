@@ -25,7 +25,7 @@ function  SidebarProfesor (){
 
 
     const PageMateria = async () => {
-        router.push(`/dashboard/teacher/menu/materia/register`);
+        router.push(`/dashboard/teacher/menu/materia/show`);
     }
 
     const LogOut = async () => {
